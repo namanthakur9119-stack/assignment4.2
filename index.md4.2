@@ -1,0 +1,347 @@
+# Assignment 4.2 — Job Application Form
+
+## Question 1: Create fields for full name, email, and phone number.
+
+**Answer:**
+
+```html
+<label for="fullName">Full Name:</label>
+<input type="text" id="fullName" name="fullName" required>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone" required>
+```
+
+**Explanation:** The `text`, `email`, and `tel` input types collect the applicant's name, email address, and phone number.
+
+## Question 2: Add a date input for date of birth.
+
+**Answer:**
+
+```html
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" name="dob" required>
+```
+
+**Explanation:** The `date` input type allows users to select a date from a calendar.
+
+## Question 3: Add a URL input for the portfolio URL.
+
+**Answer:**
+
+```html
+<label for="portfolio">Portfolio URL:</label>
+<input type="url" id="portfolio" name="portfolio"
+       placeholder="https://example.com">
+```
+
+**Explanation:** The `url` input type allows users to enter a website address. The browser checks its basic URL format when the form is submitted. This field is optional.
+
+## Question 4: Add radio buttons for gender or preferred shift.
+
+**Answer:**
+
+```html
+<p>Preferred Shift:</p>
+
+<input type="radio" id="morning" name="shift" value="Morning" required>
+<label for="morning">Morning</label>
+
+<input type="radio" id="evening" name="shift" value="Evening">
+<label for="evening">Evening</label>
+
+<input type="radio" id="night" name="shift" value="Night">
+<label for="night">Night</label>
+```
+
+**Explanation:** Radio buttons allow users to select only one option from a group. All related radio buttons use the same `name`, which is `shift` here.
+
+## Question 5: Add checkboxes for skills.
+
+**Answer:**
+
+```html
+<p>Technical Skills:</p>
+
+<input type="checkbox" id="html" name="skills" value="HTML">
+<label for="html">HTML</label>
+
+<input type="checkbox" id="css" name="skills" value="CSS">
+<label for="css">CSS</label>
+
+<input type="checkbox" id="java" name="skills" value="Java">
+<label for="java">Java</label>
+
+<input type="checkbox" id="javascript" name="skills" value="JavaScript">
+<label for="javascript">JavaScript</label>
+```
+
+**Explanation:** Checkboxes allow users to select multiple skills. All these checkboxes use the same `name="skills"` because they belong to the same group.
+
+## Question 6: Add a dropdown for qualification or job role.
+
+**Answer:**
+
+```html
+<label for="qualification">Highest Qualification:</label>
+
+<select id="qualification" name="qualification" required>
+    <option value="">Select your qualification</option>
+    <option value="12th">12th Pass</option>
+    <option value="diploma">Diploma</option>
+    <option value="btech">B.Tech</option>
+    <option value="graduate">Other Graduate Degree</option>
+</select>
+```
+
+**Explanation:** The `<select>` tag creates a dropdown menu, and each `<option>` represents a choice.
+
+## Question 7: Add a `<textarea>` for the cover letter.
+
+**Answer:**
+
+```html
+<label for="coverLetter">Cover Letter:</label>
+
+<textarea id="coverLetter" name="coverLetter"
+          rows="5" cols="40"
+          placeholder="Write your cover letter here"
+          required></textarea>
+```
+
+**Explanation:** The `<textarea>` tag provides a larger text area for writing a cover letter or other detailed information.
+
+## Question 8: Add a disabled field.
+
+**Answer:**
+
+```html
+<label for="applicationStatus">Application Status:</label>
+
+<input type="text"
+       id="applicationStatus"
+       name="applicationStatus"
+       value="Pending"
+       disabled>
+```
+
+**Explanation:** The `disabled` attribute makes the field unavailable for editing. Disabled fields are not included in the submitted form data.
+
+## Question 9: Add a submit button.
+
+**Answer:**
+
+```html
+<button type="submit">Submit Application</button>
+```
+
+**Explanation:** The submit button attempts to submit the form after the browser checks required fields and other built-in validation rules.
+
+## Question 10: Create the complete Job Application Form.
+
+**Answer:**
+
+Save the following complete code as `job-application.html`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Application Form</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Job Application Form</h1>
+        <p>Please fill in the details to apply for the job.</p>
+    </header>
+
+    <main>
+
+        <form action="#" method="post">
+
+            <!-- Personal Information -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullName">Full Name:</label>
+                <input type="text"
+                       id="fullName"
+                       name="fullName"
+                       placeholder="Enter your full name"
+                       autocomplete="name"
+                       required>
+
+                <br><br>
+
+                <label for="email">Email Address:</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Enter your email"
+                       autocomplete="email"
+                       required>
+
+                <br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       placeholder="Enter your phone number"
+                       autocomplete="tel"
+                       required>
+
+                <br><br>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date"
+                       id="dob"
+                       name="dob"
+                       required>
+
+                <br><br>
+
+                <p>Preferred Shift:</p>
+
+                <input type="radio"
+                       id="morning"
+                       name="shift"
+                       value="Morning"
+                       required>
+                <label for="morning">Morning</label>
+
+                <input type="radio"
+                       id="evening"
+                       name="shift"
+                       value="Evening">
+                <label for="evening">Evening</label>
+
+                <input type="radio"
+                       id="night"
+                       name="shift"
+                       value="Night">
+                <label for="night">Night</label>
+
+            </fieldset>
+
+            <br>
+
+            <!-- Professional Information -->
+            <fieldset>
+                <legend>Professional Information</legend>
+
+                <label for="portfolio">Portfolio URL:</label>
+                <input type="url"
+                       id="portfolio"
+                       name="portfolio"
+                       placeholder="https://example.com">
+
+                <br><br>
+
+                <label for="qualification">Highest Qualification:</label>
+
+                <select id="qualification"
+                        name="qualification"
+                        required>
+
+                    <option value="">Select your qualification</option>
+                    <option value="12th">12th Pass</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="graduate">Other Graduate Degree</option>
+
+                </select>
+
+                <br><br>
+
+                <p>Technical Skills:</p>
+
+                <input type="checkbox"
+                       id="html"
+                       name="skills"
+                       value="HTML">
+                <label for="html">HTML</label>
+
+                <input type="checkbox"
+                       id="css"
+                       name="skills"
+                       value="CSS">
+                <label for="css">CSS</label>
+
+                <input type="checkbox"
+                       id="java"
+                       name="skills"
+                       value="Java">
+                <label for="java">Java</label>
+
+                <input type="checkbox"
+                       id="javascript"
+                       name="skills"
+                       value="JavaScript">
+                <label for="javascript">JavaScript</label>
+
+                <br><br>
+
+                <label for="coverLetter">Cover Letter:</label>
+                <br>
+
+                <textarea id="coverLetter"
+                          name="coverLetter"
+                          rows="5"
+                          cols="40"
+                          placeholder="Write your cover letter here"
+                          required></textarea>
+
+            </fieldset>
+
+            <br>
+
+            <!-- Disabled Field Example -->
+            <fieldset>
+                <legend>Application Status</legend>
+
+                <label for="applicationStatus">Current Status:</label>
+                <input type="text"
+                       id="applicationStatus"
+                       name="applicationStatus"
+                       value="Pending"
+                       disabled>
+
+            </fieldset>
+
+            <br>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Application</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>Thank you for your interest in joining our team.</p>
+    </footer>
+
+</body>
+
+</html>
+```
+
+## Submission Requirements
+
+1. Save the file as `job-application.html`.
+2. Open the file in a browser.
+3. Fill in the required fields and test the radio buttons, checkboxes, dropdown, and date input.
+4. Take a screenshot of the completed form.
+5. Submit the HTML file and screenshot.
+
+**Note:** This is a front-end demonstration. The form will not save or send applications to an employer because it does not have a working backend.
